@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-terminal-bg: #FAF5FF; /* Soft lilac bg */
+  --color-terminal-header: #F3E8FF; /* Lilac header */
+  --color-terminal-green: #8B5CF6; /* Purple response text */
+  --color-terminal-cyan: #D946EF; /* Fuchsia user prompt */
+  --color-terminal-yellow: #F59E0B;
+  --color-terminal-red: #EF4444;
+  --color-primary: #FAF8FD; /* Cream/lilac background */
+  --color-accent-teal: #EC4899; /* Pink accent */
+  --color-accent-cyan: #8B5CF6; /* Violet accent */
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+:root {
+  color-scheme: light;
+  background-color: #FAF8FD;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  color: #374151; /* Dark gray for high contrast */
+  overflow-x: hidden;
+  background-color: #FAF8FD;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8FD;
+}
+::-webkit-scrollbar-thumb {
+  background: #E9D5FF;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8B4FE;
+}
+
+/* Light Glassmorphism Panels */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 180, 254, 0.3); /* Soft purple border */
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(139, 92, 246, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Terminal Caret Blink */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.caret-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Glowing text and effects (Softened for light theme) */
+.glow-text-cyan {
+  text-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+.glow-shadow-cyan {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.1);
+}
+
+.glow-shadow-green {
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.1);
+}
